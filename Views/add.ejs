@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/styles.css">
+    <link rel="stylesheet" href="/css/add.css">
+    <link rel="shortcut icon" href="/images/jij-logo.png" type="image/x-icon">
+    <link rel="icon" href="/images/jij-logo.png" type="image/x-icon">
+    <title>Jiji</title>
+</head>
+<body>
+    <header class="header">
+        <a href="#" class="logo">
+            <img src="/images/jij-logo.png" alt="">
+        </a>
+
+        <!-- <i class='bx bx-menu' id="menu-icon"></i> -->
+
+        <nav class="navbar">
+            <a href="/">SELL FASTER,</a>
+            <a href="#services">BUY SMARTER</a>
+        </nav>
+        
+        <nav class="auth">
+            <a href="#">Sign in</a>
+            |
+            <a href="#">Registration</a>
+            <a href="" class="sell">SELL</a>
+        </nav>
+    </header>
+
+    <div class="form_container" >
+
+        <div class="item">
+            <input type="text" placeholder="Name" id="name" name="name">
+        </div>
+        <div class="item">
+            <input type="text" placeholder="Description" id="description" name="description">
+        </div>
+        <div class="item">
+            <input type="text" placeholder="Price" id="price" name="price">
+        </div>
+        <div class="item">
+            <input type="text" placeholder="Stock quantity" id="stock_quantity" name="stock_quantity">
+        </div>
+
+        <select name="category_id" id="category_id" required>
+            <option value="">Category</option>
+            <%categories.forEach((item)=>{%>
+                <option value="<%=item.id%>"><%=item.name%></option>
+            <%})%>
+        </select>
+        
+        <select name="region_id" id="region_id" required>
+            <option value="">Region</option>
+            <%regions.forEach((item)=>{%>
+                <option value="<%=item.id%>"><%=item.name%></option>
+            <%})%>
+        </select>
+
+        <button class="btn" id="add_product_btn">Submit</button>
+    </div>
+
+    <script src="/js/add.js"></script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
