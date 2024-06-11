@@ -1,6 +1,5 @@
 const express = require('express');
-const router = express.Router()
-const pool = require('../utils/connectMSQL');
+const router = express.Router();
 const { postFilter } = require('../controllers/controllers');
 
 router.route('/')

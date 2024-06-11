@@ -1,19 +1,23 @@
+const Category = require('../models/category');
+const Product = require('../models/product ');
+const Region = require('../models/region');
 const pool = require('../utils/connectMSQL');
 
 exports.getHome = async(req,res)=>{
     try {
-        const data  =await pool.query('SELECT * FROM Products;');
-        const categories=await pool.query('SELECT * FROM Categories');
-        const regions=await pool.query('SELECT * FROM Regions');
+        // const data  =await pool.query('SELECT * FROM Products;');
+        // const categories=await pool.query('SELECT * FROM Categories');
+        // const regions=await pool.query('SELECT * FROM Regions');
 
-        console.log('====================================');
-        console.log(data[0]);
-        console.log('====================================');
+        const categories =await Category.find({});
+        const regions =await Region.find({});
+        const data =await Product.find({});
+        
     // if(classifieds && categories){
-        res.render('index',{classifieds:data[0],categories:categories[0],regions:regions[0]});
+        res.render('index',{classifieds:data,categories:categories,regions:regions});
     // }
     } catch (error) {
-        res.status(500).send(error);
+        // res.status(500).send(error);
         
     }
 }

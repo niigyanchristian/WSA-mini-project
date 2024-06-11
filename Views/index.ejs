@@ -25,7 +25,7 @@
             <a href="#">Sign in</a>
             |
             <a href="#">Registration</a>
-            <a href="" class="sell">SELL</a>
+            <a href="/carts" class="sell">Cart</a>
         </nav>
     </header>
 
@@ -55,7 +55,7 @@
             </div>
             <%categories.forEach((item)=>{%>
                 <div class="nav">
-                    <img class="image" src="/images/vehicles.png" alt="">
+                    <img class="image" src="/images/<%=item.image_path%>" alt="">
                     <div>
                         <p class="title"><%=item.name%></p>
                         <p>50,000 ads</p>
@@ -144,7 +144,7 @@
                 <img class="arrow" src="/images/icons/arrow_right.svg" alt="">
             </div> -->
            
-            
+<!--             
             <div class="nav">
                 <img class="image" src="/images/animals.png" alt="">
                 <div>
@@ -152,7 +152,7 @@
                     <p>50,000 ads</p>
                 </div>
                 <img class="arrow" src="/images/icons/arrow_right.svg" alt="">
-            </div>
+            </div> -->
         </div>
 
 
@@ -166,7 +166,7 @@
                         <!-- Add more carousel items as needed -->
                       </div>
                 </div>
-                <a href="/add" class="add">
+                <a href="" class="add">
                     <p>Got something to sell?</p>
                     <div class="plust_circle">
                         <img src="/images/icons/plus_o.svg" alt="">
@@ -212,7 +212,7 @@
             </div>
             <div class="body_container" id="classifieds-container">
                 <%classifieds.forEach((item)=>{%>
-                    <a href="/products/<%=item.id%>" class="item" data-category="<%= item.category_id %>" data-region="<%= item.region_id %>" data-price="<%= item.price %>">
+                    <a href="/products/<%=item._id%>" class="item" data-category="<%= item.category_id %>" data-region="<%= item.region_id %>" data-price="<%= item.price %>">
                         <div class="image">
                                 <img src="/images/<%=item.image_path%>" alt="">
                                 <div class="tag">
