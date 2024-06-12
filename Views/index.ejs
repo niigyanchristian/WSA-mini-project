@@ -9,25 +9,7 @@
     <title>Jiji</title>
 </head>
 <body>
-    <header class="header">
-        <a href="#" class="logo">
-            <img src="/images/jij-logo.png" alt="">
-        </a>
-
-        <!-- <i class='bx bx-menu' id="menu-icon"></i> -->
-
-        <nav class="navbar">
-            <a href="/">SELL FASTER,</a>
-            <a href="#services">BUY SMARTER</a>
-        </nav>
-        
-        <nav class="auth">
-            <a href="#">Sign in</a>
-            |
-            <a href="#">Registration</a>
-            <a href="/carts" class="sell">Cart</a>
-        </nav>
-    </header>
+    <%-include('partials/header')%>
 
     <section class="search-board">
         <div class="title">
@@ -62,98 +44,7 @@
                     </div>
                     <img class="arrow" src="/images/icons/arrow_right.svg" alt="">
                 </div>
-            <%})%>
-            <!-- <div class="nav">
-                <img class="image" src="/images/real-estate.png" alt="">
-                <div>
-                    <p class="title">Property</p>
-                    <p>50,000 ads</p>
-                </div>
-                <img class="arrow" src="/images/icons/arrow_right.svg" alt="">
-            </div>
-            <div class="nav">
-                <img class="image" src="/images/mobile.png" alt="">
-                <div>
-                    <p class="title">Mobile Phones& Tablet</p>
-                    <p>50,000 ads</p>
-                </div>
-                <img class="arrow" src="/images/icons/arrow_right.svg" alt="">
-            </div>
-            <div class="nav">
-                <img class="image" src="/images/electronics.png" alt="">
-                <div>
-                    <p class="title">Electronics</p>
-                    <p>50,000 ads</p>
-                </div>
-                <img class="arrow" src="/images/icons/arrow_right.svg" alt="">
-            </div>
-            <div class="nav">
-                <img class="image" src="/images/home.png" alt="">
-                <div>
-                    <p class="title">Home, Furniture & Appliances</p>
-                    <p>50,000 ads</p>
-                </div>
-                <img class="arrow" src="/images/icons/arrow_right.svg" alt="">
-            </div>
-            <div class="nav">
-                <img class="image" src="/images/beauty.png" alt="">
-                <div>
-                    <p class="title">Health & Beauty</p>
-                    <p>50,000 ads</p>
-                </div>
-                <img class="arrow" src="/images/icons/arrow_right.svg" alt="">
-            </div>
-            <div class="nav">
-                <img class="image" src="/images/fashion.png" alt="">
-                <div>
-                    <p class="title">Fashion</p>
-                    <p>50,000 ads</p>
-                </div>
-                <img class="arrow" src="/images/icons/arrow_right.svg" alt="">
-            </div>
-            <div class="nav">
-                <img class="image" src="/images/hobbies.png" alt="">
-                <div>
-                    <p class="title">Sport, Arts & Outdoors</p>
-                    <p>50,000 ads</p>
-                </div>
-                <img class="arrow" src="/images/icons/arrow_right.svg" alt="">
-            </div>
-            <div class="nav">
-                <img class="image" src="/images/jobseekers.png" alt="">
-                <div>
-                    <p class="title">Seeking works CSv</p>
-                    <p>50,000 ads</p>
-                </div>
-                <img class="arrow" src="/images/icons/arrow_right.svg" alt="">
-            </div>
-            <div class="nav">
-                <img class="image" src="/images/vehicles.png" alt="">
-                <div>
-                    <p class="title">Services</p>
-                    <p>50,000 ads</p>
-                </div>
-                <img class="arrow" src="/images/icons/arrow_right.svg" alt="">
-            </div>
-            <div class="nav">
-                <img class="image" src="/images/jobs.png" alt="">
-                <div>
-                    <p class="title">Jobs</p>
-                    <p>50,000 ads</p>
-                </div>
-                <img class="arrow" src="/images/icons/arrow_right.svg" alt="">
-            </div> -->
-           
-<!--             
-            <div class="nav">
-                <img class="image" src="/images/animals.png" alt="">
-                <div>
-                    <p class="title">Pets</p>
-                    <p>50,000 ads</p>
-                </div>
-                <img class="arrow" src="/images/icons/arrow_right.svg" alt="">
-            </div> -->
-        </div>
+            <%})%></div>
 
 
         <div class="body">
@@ -308,43 +199,6 @@
     </footer>
     <script src="/js/main.js"></script>
     <script src="/js/home.js"></script>
-    <!-- <script>
-        const checkboxes = document.querySelectorAll('input[type="checkbox"][name="category"]');
-        
-        const items = document.querySelectorAll('.item');
-
-        checkboxes.forEach(checkbox => {
-            checkbox.addEventListener('change', () => {
-                const selectedCategories = Array.from(checkboxes)
-                    .filter(checkbox => checkbox.checked)
-                    .map(checkbox => checkbox.value);
-
-                if (selectedCategories.length === 0) {
-                    // If no checkboxes are selected, show all items
-                    items.forEach(item => {
-                        item.style.display = 'block';
-                    });
-                } else {
-                    // Filter items based on selected categories
-                    items.forEach(item => {
-                        const itemCategory = item.getAttribute('data-category');
-                        if (selectedCategories.includes(itemCategory)) {
-                            item.style.display = 'block';
-                        } else {
-                            item.style.display = 'none';
-                        }
-                    });
-                }
-            });
-        });
-
-        // Initial display of items: show all items
-        document.addEventListener('DOMContentLoaded', () => {
-            items.forEach(item => {
-                item.style.display = 'block';
-            });
-        });
-    </script> -->
 </body>
 </html>
 

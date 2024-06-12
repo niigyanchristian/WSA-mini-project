@@ -21,3 +21,20 @@ exports.getHome = async(req,res)=>{
         
     }
 }
+
+
+exports.getProducts =async(req,res)=>{
+// const data  =await pool.query('SELECT * FROM Products;');
+    const data = await Product.findById();
+
+    res.json(data);
+}
+
+exports.getProductById = async(req,res)=>{
+    const id = req.params.id;
+    // const data =  await pool.query(`SELECT * FROM Products WHERE id = ${id};`)
+
+    const data = await Product.findById(id);
+
+    res.render('product',{product:data});
+}

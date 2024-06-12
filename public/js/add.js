@@ -19,9 +19,6 @@ add_product_btn.addEventListener('click',function(){
     }).
     then(data=>data.json()).
     then((data)=>{
-        console.log('====================================');
-        console.log(data);
-        console.log('====================================');
     }).catch((e)=>{
         console.log(e)
     })

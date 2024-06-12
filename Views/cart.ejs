@@ -10,32 +10,14 @@
     <title>Jiji</title>
 </head>
 <body>
-    <header class="header">
-        <a href="#" class="logo">
-            <img src="/images/jij-logo.png" alt="">
-        </a>
-
-        <!-- <i class='bx bx-menu' id="menu-icon"></i> -->
-
-        <nav class="navbar">
-            <a href="/">SELL FASTER,</a>
-            <a href="#services">BUY SMARTER</a>
-        </nav>
-        
-        <nav class="auth">
-            <a href="#">Sign in</a>
-            |
-            <a href="#">Registration</a>
-            <a href="" class="sell">SELL</a>
-        </nav>
-    </header>
+    <%-include('partials/header')%>
 
     <div class="main_container" >
         <h1>Cart(<%=carts.length%>)</h1>
         <% carts.forEach((item, index) => { %>
             <div class="item">
                 <div class="container">
-                    <img src="/images/bottle-5689969_1280.png" alt="">
+                    <img src="/images/<%=item.image_path%>" alt="">
                     <div class="body">
                         <h2 class="title"><%= item.name %></h2>
                         <p class="description"><%= item.description %></p>
