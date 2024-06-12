@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/styles.css">
+    <link rel="stylesheet" href="/css/product.css">
+    <link rel="shortcut icon" href="/images/jij-logo.png" type="image/x-icon">
+    <link rel="icon" href="/images/jij-logo.png" type="image/x-icon">
+    <title>Jiji</title>
+</head>
+<body>
+    <%-include('partials/header')%>
+
+    <div class="main_container" >
+        <div class="box1">
+            <img src="/images/bottle-5689969_1280.png" alt="">
+        </div>
+        <div class="box2">
+            <h2 class="title"><%=product.name%></h2>
+            <p class="description"><%=product.description%></p>
+            <div class="price">
+                <div class="top">
+                    <p>Flash sales</p>
+                    <p>Stock quantity: <%=product.stock_quantity%></p>
+                </div>
+                <div class="down">
+                    <p>GHS <%=product.price%></p>
+                </div>
+            </div>
+
+            <form action="/carts" method="post">
+                <input type="number" name="quantity" placeholder="quantity" min="1" value="1">
+                <input type="text" name="product_id" value="<%=product.id%>" hidden>
+                <button class="btn">ADD TO CART</button>
+            </form>
+
+
+        </div>
+    </div>
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+

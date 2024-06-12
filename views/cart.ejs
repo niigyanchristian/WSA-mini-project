@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/styles.css">
+    <link rel="stylesheet" href="/css/cart.css">
+    <link rel="shortcut icon" href="/images/jij-logo.png" type="image/x-icon">
+    <link rel="icon" href="/images/jij-logo.png" type="image/x-icon">
+    <title>Jiji</title>
+</head>
+<body>
+    <%-include('partials/header')%>
+
+    <div class="main_container" >
+        <h1>Cart(<%=carts.length%>)</h1>
+        <% carts.forEach((item, index) => { %>
+            <div class="item">
+                <div class="container">
+                    <img src="/images/<%=item.image_path%>" alt="">
+                    <div class="body">
+                        <h2 class="title"><%= item.name %></h2>
+                        <p class="description"><%= item.description %></p>
+                        <p class="quantity">Quantity: <span class="quantity-number" data-index="<%= index %>"><%= item.quantity %></span></p>
+                    </div>
+                    <p class="price">GHS <%= (item.price * item.quantity).toFixed(2) %></p>
+                </div>
+                <div class="down">
+                    <div class="delete" onclick="delete_btn(`<%=item.id%>`)">
+                        <img src="/images/icons/delete_red.svg" alt="">
+                        <p>Remove</p>
+                    </div>
+                    <div class="update_quantity">
+                        <div class="btn decrease" data-index="<%= index %>">-</div>
+                        <p class="number" data-index="<%= index %>"><%= item.quantity %></p>
+                        <div class="btn increase" data-index="<%= index %>">+</div>
+                        <input type="text" value="<%=item.id%>" id="product_id" hidden>
+                    </div>
+                </div>
+            </div>
+        <% }) %>
+        
+        
+    </div>
+
+    <script src="/js/cart.js"></script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/styles.css">
+    <link rel="shortcut icon" href="/images/jij-logo.png" type="image/x-icon">
+    <link rel="icon" href="/images/jij-logo.png" type="image/x-icon">
+    <title>Jiji</title>
+</head>
+<body>
+    <%-include('partials/header')%>
+
+    <section class="search-board">
+        <div class="title">
+            <p>Find anything in </p>
+            <span>
+                <img src="/images/icons/location.svg" alt="">
+                <p>All Ghana</p>
+            </span>
+        </div>
+        <div class="search">
+            <input type="text" placeholder="I'm looking for...">
+            <img src="/images/icons/search.svg" alt="">
+        </div>
+    </section>
+
+    <section class="main-container">
+        <div class="navs">
+            <div class="plus">
+                <div class="image_box">
+                    <img class="image" src="/images/icons/plus_w.svg" alt="">
+                </div>
+                <div>
+                    <p class="title">Post ad</p>
+                </div>
+            </div>
+            <%categories.forEach((item)=>{%>
+                <div class="nav">
+                    <img class="image" src="/images/<%=item.image_path%>" alt="">
+                    <div>
+                        <p class="title"><%=item.name%></p>
+                        <p>50,000 ads</p>
+                    </div>
+                    <img class="arrow" src="/images/icons/arrow_right.svg" alt="">
+                </div>
+            <%})%></div>
+
+
+        <div class="body">
+            <div class="top">
+                <div class="carousel" id="carousel">
+                    <div class="carousel-inner">
+                        <div class="carousel-item"><img src="/images/image1.png" alt=""></div>
+                        <div class="carousel-item"><img src="/images/image2.png" alt=""></div>
+                        <div class="carousel-item"><img src="/images/image3.png" alt=""></div>
+                        <!-- Add more carousel items as needed -->
+                      </div>
+                </div>
+                <a href="" class="add">
+                    <p>Got something to sell?</p>
+                    <div class="plust_circle">
+                        <img src="/images/icons/plus_o.svg" alt="">
+                    </div>
+                    <p>Post an advert for free?</p>
+                </a>
+            </div>
+            <div class="trending-title">Trending ads</div>
+            <div class="categories">
+                <p>Choose category</p>
+                <div class="filters">
+                    <label for="select-cat">Filter by Category</label>
+                    <select name="category" id="select-cat" class="form-control">
+                        <option value="all">All Categories</option>
+                        <% categories.forEach((item) => { %>
+                            <option value="<%= item.id %>"><%= item.name %></option>
+                        <% }) %>
+                    </select>
+                    
+                    <label for="select-region">Filter by Region</label>
+                    <select name="region" id="select-region" class="form-control">
+                        <option value="all">All Regions</option>
+                        
+                        <% regions.forEach((region) => { %>
+                            <option value="<%= region.id %>"><%= region.name %></option>
+                        <% }) %>
+                    </select>
+            
+                    <label for="select-price">Filter by Price Range</label>
+                    <select name="price" id="select-price" class="form-control">
+                        <option value="all">All Prices</option>
+                        <option value="0-100">0 - 100</option>
+                        <option value="101-500">101 - 500</option>
+                        <option value="501-1000">501 - 1000</option>
+                        <option value="1001-5000">1001 - 5000</option>
+                        <option value="5001-10000">5001 - 10000</option>
+                        <option value="10001-20000">10001 - 20000</option>
+                    </select>
+                    <br>
+            
+                    <button id="apply-filters" class="btn">Apply Filters</button>
+                </div>
+            </div>
+            <div class="body_container" id="classifieds-container">
+                <%classifieds.forEach((item)=>{%>
+                    <a href="/products/<%=item._id%>" class="item" data-category="<%= item.category_id %>" data-region="<%= item.region_id %>" data-price="<%= item.price %>">
+                        <div class="image">
+                                <img src="/images/<%=item.image_path%>" alt="">
+                                <div class="tag">
+                                <p>Top</p>
+                                </div>
+                            </div>
+                            <div class="main">
+                                <p class="snippet"><%=item.name%></p>
+                                <p class="price"><%=item.description%></p>
+                                <p class="price"><strong style="color: black;">Price </strong><%=item.price%></p>
+                                <p class="price"><strong style="color: black;">Qut. Stock </strong><%=item.stock_quantity%></p>
+                                <div class="bookmark">
+                                    <img src="/images/icons/bookmark.svg" alt="">
+                                </div>
+                            </div>
+                        </a>
+                <%})%>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <img class="footer_image" src="/images/icons/footer-ghana-new.svg" alt="">
+        <div class="footer_container">
+            <div class="footer_column">
+                <p class="title">About us</p>
+                <p>About jiji</p>
+                <p>We are hiring!</p>
+                <p>Terms & Conditions</p>
+                <p>Privacy Policy</p>
+                <p>Billing Policy</p>
+                <p>Copyright Infringement Policy</p>
+            </div>
+            <div class="footer_column">
+                <p class="title">Support</p>
+                <p>support@jiji.com.gh</p>
+                <p>Safety tips</p>
+                <p>Contact Us</p>
+                <p>FAQ</p>
+            </div>
+            <div class="footer_column">
+                <p class="title">Our apps</p>
+                <img src="/images/icons/app-store.svg" alt=""><br/>
+                <img src="/images/icons/google-play.svg" alt="">
+                
+            </div>
+            <div class="footer_column">
+                <p class="title">Our resources</p>
+                <p>Jiji on FB</p>
+                <p>Our Instagram</p>
+                <p>Our YouTube</p>
+                <p>Our Twitter</p>
+            </div>
+            <div class="footer_column">
+                <p class="title">Hot links</p>
+                <p>Jiji Africa</p>
+            </div>
+        </div>
+
+        <div class="contries">
+            <div class="image">
+                <img src="/images/nigeria.svg" alt="">
+            </div>
+            <div class="image">
+                <img src="/images/uganda.svg" alt="">
+            </div>
+            <div class="image">
+                <img src="/images/kenya.svg" alt="">
+            </div>
+            <div class="image">
+                <img src="/images/tanzania.svg" alt="">
+            </div>
+            <div class="image">
+                <img src="/images/ethiopia.svg" alt="">
+            </div>
+            <div class="image">
+                <img src="/images/senegal.svg" alt="">
+            </div>
+            <div class="image">
+                <img src="/images/civ.svg" alt="">
+            </div>
+            <div class="image">
+                <img src="/images/bangladesh.svg" alt="">
+            </div>
+            <div class="image">
+                <img src="/images/srilanka.svg" alt="">
+            </div>
+
+        </div>
+
+        <p class="copyright">&copy; 2024 Jiji.com.gh</p>
+
+    </footer>
+    <script src="/js/main.js"></script>
+    <script src="/js/home.js"></script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
