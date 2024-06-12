@@ -1,6 +1,6 @@
 document.addEventListener('DOMContentLoaded', function() {
 
-    fetch('http://localhost:3000/products',{
+    fetch('https://wsa-mini-project.onrender.com/products',{
         method:'get',
     }).then((data)=>{
         return JSON.stringify(data);

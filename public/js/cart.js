@@ -35,7 +35,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
 
 function updateNumber(product_id,quantity){
-    fetch('http://localhost:3000/carts/'+product_id,{
+    fetch('https://wsa-mini-project.onrender.com/carts/'+product_id,{
         method:'put',
         headers: {
             'Content-Type': 'application/json'
@@ -51,7 +51,7 @@ function updateNumber(product_id,quantity){
 
 
  function delete_btn(product_id){
-    fetch('http://localhost:3000/carts/'+product_id,{
+    fetch('https://wsa-mini-project.onrender.com/carts/'+product_id,{
         method:'delete',
         headers: {
             'Content-Type': 'application/json'

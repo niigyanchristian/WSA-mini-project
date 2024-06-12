@@ -97,7 +97,7 @@ applyFiltersButton.addEventListener('click', () => {
     const selectedRegion = selectRegion.value;
     const selectedPrice = selectPrice.value;
 
-    fetch('http://localhost:3000/filter', {
+    fetch('https://wsa-mini-project.onrender.com/filter', {
         method: 'post',
         headers: {
             'Content-Type': 'application/json'
