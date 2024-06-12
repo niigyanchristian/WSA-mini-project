@@ -14,7 +14,7 @@ exports.getHome = async(req,res)=>{
         const data =await Product.find({});
         
     // if(classifieds && categories){
-        res.render('index',{classifieds:data,categories:categories,regions:regions});
+        res.render('home',{classifieds:data,categories:categories,regions:regions});
     // }
     } catch (error) {
         // res.status(500).send(error);
