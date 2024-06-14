@@ -9,7 +9,6 @@ const stockRoute = require('./routes/stock');
 const homeRoute = require('./routes/home');
 const filterRoute = require('./routes/filter');
 
-
 const MongoDB = require("./utils/connectMongoDB");
 
 
@@ -25,11 +24,10 @@ app.use('/',homeRoute);
 app.use('/products',productsRoute);
 app.use('/carts',cartsRoute);
 app.use('/stock',stockRoute);
-// app.use('/add',addRoute);
 app.use('/filter',filterRoute);
 
 
 
 app.listen(process.env.PORT,()=>{
-    console.log("WSA is listening to post 3000");
+    console.log(`WSA is listening to post ${process.env.PORT}`);
 });

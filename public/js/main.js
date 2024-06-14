@@ -4,25 +4,6 @@ window.onscroll = () =>{
     header.classList.toggle('sticky',window.scrollY>100)
 }
 
-
-var container = document.querySelector('.body_container');
-
-const Items = [
-    {id:4,path:'nikeaf1.jpg',title:'Nike AF1 Triple White',snippet:'GH₵ 300.00'},
-    {id:4,path:'laptop.jpg',title:'HP Laptop',snippet:'GH₵ 300.00'},
-    {id:4,path:'laptop2.jpg',title:'HP Laptop',snippet:'GH₵ 300.00'},
-    {id:4,path:'laptop3.jpg',title:'HP Laptop',snippet:'GH₵ 300.00'},
-    {id:4,path:'foamcleaner.jpg',title:'Foam Cleaner',snippet:'GH₵ 300.00'},
-    {id:4,path:'iphone14promax.jpg',title:'Iphone 14 Pro Max',snippet:'GH₵ 15,000.00'},
-    {id:1,path:'bottle-5689969_1280.png',title:'Bottle',snippet:'GH₵ 300.00'},
-    {id:2,path:'monitor-2004457_1280.png',title:'Apple Monitor',snippet:'GH₵ 300.00'},
-    {id:3,path:'running-clock-1329309_640.png',title:'Watch',snippet:'GH₵ 300.00'},
-    {id:3,path:'ps4.jpg',title:'Ps4 Gaming Console'},
-    {id:3,path:'PS5.jpg',title:'Ps5 Gaming Console',snippet:'GH₵ 300.00'},
-    {id:4,path:'nikeaf1.jpg',title:'Nike AF1 Triple White',snippet:'GH₵ 300.00'},
-]
-
-
 window.onscroll = () =>{
     if (window.innerWidth < 1280) return;
 
@@ -73,18 +54,7 @@ function prevSlide() {
 setInterval(nextSlide, 3000); 
 
 
-// =====================================
-const navs = [
-    {img:'/images/vehicles.png',title:'Vehicles'},
-    {img:'/images/vehicles.png',title:'Vehicles'},
-    {img:'/images/vehicles.png',title:'Vehicles'},
-    {img:'/images/vehicles.png',title:'Vehicles'},
-    {img:'/images/vehicles.png',title:'Vehicles'},
-    {img:'/images/vehicles.png',title:'Vehicles'},
-]
-
 // ======================================================
-
 
 const selectCat = document.getElementById('select-cat');
 const selectRegion = document.getElementById('select-region');
