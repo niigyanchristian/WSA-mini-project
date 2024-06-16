@@ -1,3 +1,4 @@
+const Cart = require('../models/cart');
 const Category = require('../models/category');
 const Product = require('../models/product ');
 const Region = require('../models/region');
@@ -12,8 +13,9 @@ exports.getHome = async(req,res)=>{
         const categories =await Category.find({});
         const regions =await Region.find({});
         const data =await Product.find({});
+        const cart = await Cart.find().populate('product_id').exec();
         
-        res.render('home',{classifieds:data,categories:categories,regions:regions});
+        res.render('home',{classifieds:data,categories:categories,regions:regions,cart:cart.length});
     } catch (error) {
         // res.status(500).send(error);
         
@@ -33,6 +35,7 @@ exports.getProductById = async(req,res)=>{
     // const data =  await pool.query(`SELECT * FROM Products WHERE id = ${id};`)
 
     const data = await Product.findById(id);
+    const cart = await Cart.find().populate('product_id').exec();
 
-    res.render('product',{product:data});
+    res.render('product',{product:data,cart:cart.length});
 }

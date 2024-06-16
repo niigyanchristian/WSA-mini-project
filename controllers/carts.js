@@ -12,7 +12,7 @@ exports.getCarts = async (req, res) => {
         image_path:item.product_id.image_path
       }));
 
-      res.render('cart', { carts: cartItems });
+      res.render('cart', { carts: cartItems,cart:data.length });
     } catch (err) {
       console.error(err);
       res.status(500).send('Server Error');
