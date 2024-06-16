@@ -89,7 +89,7 @@ function displayClassifieds(classifieds) {
         itemElement.dataset.category = item.category_id;
         itemElement.dataset.region = item.region;
         itemElement.dataset.price = item.price;
-        itemElement.href = `/products/${item.id}`
+        itemElement.href = `/products/${item._id}`
 
         itemElement.innerHTML = `
             <div class="image">
