@@ -13,9 +13,7 @@ exports.getHome = async(req,res)=>{
         const regions =await Region.find({});
         const data =await Product.find({});
         
-    // if(classifieds && categories){
         res.render('home',{classifieds:data,categories:categories,regions:regions});
-    // }
     } catch (error) {
         // res.status(500).send(error);
         
@@ -25,7 +23,7 @@ exports.getHome = async(req,res)=>{
 
 exports.getProducts =async(req,res)=>{
 // const data  =await pool.query('SELECT * FROM Products;');
-    const data = await Product.findById();
+    const data = await Product.find({});
 
     res.json(data);
 }
