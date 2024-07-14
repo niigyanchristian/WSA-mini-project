@@ -12,6 +12,8 @@ exports.getCarts = async (req, res) => {
         image_path:item.product_id.image_path
       }));
 
+      console.log(cartItems)
+
       res.render('cart', { carts: cartItems,cart:data.length });
     } catch (err) {
       console.error(err);
@@ -36,6 +38,8 @@ exports.postCart = async (req, res) => {
 exports.putCart = async (req, res) => {
     const id = req.params.id;
     const { quantity } = req.body;
+
+    console.log(id,quantity);
     try {
       await Cart.findByIdAndUpdate(id, { quantity });
 

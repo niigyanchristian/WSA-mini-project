@@ -21,6 +21,7 @@ document.addEventListener('DOMContentLoaded', function() {
             const quantityElement = document.querySelector(`.quantity-number[data-index="${index}"]`);
             var product_id = document.getElementById('product_id').value;
 
+            console.log("=>",document.getElementById('product_id'))
             if (numberElement && quantityElement) {
                 const newValue = parseInt(numberElement.textContent) - 1;
                 if (newValue >= 0) {
@@ -35,7 +36,8 @@ document.addEventListener('DOMContentLoaded', function() {
 
 
 function updateNumber(product_id,quantity){
-    fetch('https://wsa-mini-project.onrender.com/carts/'+product_id,{
+    console.log(product_id)
+    fetch('https://wsa-mini-project.onrender.comect.onrender.comect.onrender.comect.onrender.com/cart/'+product_id,{
         method:'put',
         headers: {
             'Content-Type': 'application/json'
@@ -51,7 +53,7 @@ function updateNumber(product_id,quantity){
 
 
  function delete_btn(product_id){
-    fetch('https://wsa-mini-project.onrender.com/carts/'+product_id,{
+    fetch('https://wsa-mini-project.onrender.com/cart/'+product_id,{
         method:'delete',
         headers: {
             'Content-Type': 'application/json'
