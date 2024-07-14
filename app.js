@@ -23,6 +23,7 @@ MongoDB()
 app.use('/',homeRoute);
 app.use('/products',productsRoute);
 app.use('/cart',cartsRoute);
+app.use('/carts',cartsRoute);
 app.use('/stock',stockRoute);
 app.use('/filter',filterRoute);
 
