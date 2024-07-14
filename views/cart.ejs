@@ -15,7 +15,7 @@
     <div class="main_container" >
         <h1>Cart(<%=carts.length%>)</h1>
         <% carts.forEach((item, index) => { %>
-            <div class="item">
+            <div class="item" data-id="<%=item.id%>">
                 <div class="container">
                     <img src="/images/<%=item.image_path%>" alt="">
                     <div class="body">
