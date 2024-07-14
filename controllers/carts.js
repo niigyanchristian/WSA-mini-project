@@ -28,7 +28,7 @@ exports.postCart = async (req, res) => {
       const cartItem = new Cart({ product_id, quantity });
       await cartItem.save();
 
-      res.redirect('/carts');
+      res.redirect('/cart');
     } catch (err) {
       console.error(err);
       res.status(500).send('Server Error');
